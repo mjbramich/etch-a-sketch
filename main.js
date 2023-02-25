@@ -56,7 +56,9 @@ rainbowModeBtn.innerHTML = `Rainbow Mode`
 eraserBtn.innerHTML = `Eraser`
 resetBtn.innerHTML = `Reset`
 
-colorWheel.addEventListener('change', setCurrentColor(e.target.value))
+colorWheel.addEventListener('change', e => {
+    setCurrentColor(e.target.value)
+})
 
 
 const changeColor = (e,color) => e.target.style.backgroundColor = color
