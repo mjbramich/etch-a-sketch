@@ -12,6 +12,19 @@ const eraserBtn = document.createElement('button')
 const resetBtn = document.createElement('button')
 
 
+const defaultSize = 16
+const defaultMode = 'color'
+const defaultColor = '#000000'
+
+let currentSize = defaultSize
+let currentMode = defaultMode
+let currentColor = defaultColor
+
+function setCurrentColor(newColor) {
+    colorWheel.style.background = newColor
+    currentColor = newColor
+}
+
 header.innerHTML = `<h1>Etch-A-Sketch</h1>`
 outerContainer.prepend(header)
 
@@ -26,6 +39,7 @@ colorWheel.setAttribute('type', 'color')
 colorWheel.setAttribute('value', '#000000')
 
 colorModeBtn.classList.add('colorModeBtn')
+colorModeBtn.classList.add('active')
 controlPanel.appendChild(colorModeBtn)
 
 rainbowModeBtn.classList.add('rainbowModeBtn')
@@ -42,25 +56,16 @@ rainbowModeBtn.innerHTML = `Rainbow Mode`
 eraserBtn.innerHTML = `Eraser`
 resetBtn.innerHTML = `Reset`
 
-colorWheel.addEventListener('change', ColorPicker, false)
+colorWheel.addEventListener('change', setCurrentColor(e.target.value))
 
-function ColorPicker(e) {
-    colorWheel.style.background = e.target.value
-    currentColor = e.target.value
-}
 
 const changeColor = (e,color) => e.target.style.backgroundColor = color
-const defaultMode = 'color'
-let currentMode = defaultMode
-const defaultColor = '#000000'
-let currentColor = defaultColor
 
 const buttons = document.querySelectorAll('button')
 
 buttons.forEach((button) => {
     button.addEventListener('click', changeMode)
 })
-
 
 
 function changeMode(e){
@@ -86,11 +91,10 @@ function changeMode(e){
 }
 
 function cellColor(e){
+    //prevents drop and drag
     e.preventDefault()
-    console.log(e.target);
 
     if(e.buttons === 1 && e.target.matches('.cell') && currentMode === 'color'){
-         // prevents drag and drop
         changeColor(e, currentColor)
         console.log(e);
     }else if(e.buttons === 1 && e.target.matches('.cell') && currentMode === 'eraser'){
@@ -144,13 +148,9 @@ controlPanel.append(gridSlider)
 gridSlider.classList.add('slider')
 controlPanel.append(gridSliderOutput)
 
-const defaultSize = 16
-let currentSize = defaultSize
+
 gridSliderOutput.innerHTML = `${currentSize} * ${currentSize} GRID` 
 
-addDivs()
-
-console.log(gridSlider);
 
 const sliderAttributes = {
     type: 'range',
@@ -184,4 +184,7 @@ function updateGrid(e){
 
 }
 
-
+// On page load/refresh initialise a grid.
+window.onload = () => {
+    addDivs()
+}
