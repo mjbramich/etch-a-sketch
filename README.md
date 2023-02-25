@@ -2,7 +2,7 @@
 A sketch board toy.
 
 **Link to project:** 
-
+https://mjbramich.github.io/etch-a-sketch/
 
 ## How It's Made:
 
