@@ -12,8 +12,8 @@ First of all i created all the HTML using JavaScript. From there i created a gri
 
 ## Optimizations
 
-First assignment was just to make a 16 * 16 grid, from there i was able to use a range slider to set the size of the grid. I also added a color wheel that the user can use to change the color and a rainbow mode as well.
-
+  * Implement media quieries to handle different devices and screen sizes
+  * Make the Javascript code, cleaner and more readable
 
 ## Lessons Learned:
 
@@ -26,7 +26,6 @@ First assignment was just to make a 16 * 16 grid, from there i was able to use a
   * Refreshing my knowledge of flexbox
   * Experimenting with different CSS styles
   
-## Examples:
 
 
 
