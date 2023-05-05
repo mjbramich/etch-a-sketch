@@ -12,7 +12,7 @@ First of all i created all the HTML using JavaScript. From there i created a gri
 
 ## Optimizations
 
-  * Implement media quieries to handle different devices and screen sizes
+  * Implement media queries to handle different devices and screen sizes
   * Make the Javascript code, cleaner and more readable
 
 ## Lessons Learned:
