@@ -1,6 +1,8 @@
 # Etch-a-Sketch
 A sketch board toy.
 
+I recently revisited this project simply to reflect on how I initially approached its development. Instead of refactoring the code, I made a deliberate choice to leave it as is. This decision allows me to observe and appreciate the progress I've made so far as a developer
+
 **Link to project:** 
 https://mjbramich.github.io/etch-a-sketch/
 
